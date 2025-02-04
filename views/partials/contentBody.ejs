@@ -1,0 +1,31 @@
+
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <% for(let i=0; i<blogPostsContent.length; i++) {%>
+        <div class="col">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <p class="card-text"><%= blogPostsContent[i] %></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <form action="/editPost" method="POST">
+                    <button class="btn btn-sm btn-outline-secondary" type="submit" name="edit" value="<%=i%>">Edit</button>
+                  </form>
+                  <form action="/delete" method="POST">
+                    <button class="btn btn-sm btn-outline-secondary" type="submit" name="delete" value="<%=i%>">Delete</button>
+                  </form>
+                </div>
+                <!--<small class="text-body-secondary">9 mins</small>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <%}%>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/head.ejs") %>
+  </head>
+  <body>
+    <%-include("partials/header.ejs") %>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <div>
+            <form action="/editPostSubmit" method="POST">
+              <div class="mb-3">
+                <label class="form-label"
+                  >Please update your blog post below</label
+                >
+                <textarea
+                  class="form-control"
+                  name="updatePost"
+                  value="<%=blogPostsContent[index]%>"
+                  rows="4"
+                >
+<%=blogPostsContent[index]%></textarea
+                >
+              </div>
+              <p></p>
+              <div class="d-grid gap-2">
+                <button
+                  class="btn btn-primary"
+                  type="submit"
+                  name="updatePost"
+                  value="<%=index%>"
+                >
+                  Update post
+                </button>
+              </div>
+            </form>
+          </div>
+          <p></p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
